@@ -168,7 +168,7 @@ if [[ "$verbose" -gt 0 ]] ; then
 fi
 
 if [ ! "$have_input_image" -gt 0 ] ; then
-	image_available=$(ls -1 | grep ${BOARD}_coreboot_seabios || true)
+	image_available=$(ls -1 | grep ${BOARD}_coreboot_edk2 || true)
 	if [ -z "${image_available}" ] ; then
 		echo "No image file found. Please add -i <file>"
 		echo ""
@@ -177,7 +177,7 @@ if [ ! "$have_input_image" -gt 0 ] ; then
 	fi
 
 	prompt="file not specified. Please select a file to flash. Please read the README for details about the differences:"
-	options=( $(find -maxdepth 1 -name "${BOARD}_coreboot_seabios*rom" -print0 | xargs -0) )
+	options=( $(find -maxdepth 1 -name "${BOARD}_coreboot_edk2*rom" -print0 | xargs -0) )
 
 	PS3="$prompt "
 	select INPUT_IMAGE_PATH in "${options[@]}" "Quit" ; do

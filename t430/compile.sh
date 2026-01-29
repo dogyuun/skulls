@@ -34,7 +34,7 @@ if [ ! -f "$DOCKER_COREBOOT_DIR/build/coreboot.rom" ]; then
 else
   #split out top BIOS
   if [ ! -z "$COREBOOT_COMMIT" ]; then
-    RELEASEFILE="${MODEL}_coreboot_seabios_$(echo ${COREBOOT_COMMIT} | cut -c 1-10)_top.rom"
+    RELEASEFILE="${MODEL}_coreboot_edk2_$(echo ${COREBOOT_COMMIT} | cut -c 1-10)_top.rom"
   else
     RELEASEFILE="coreboot_$MAINBOARD-$MODEL-top.rom"
   fi
